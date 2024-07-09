@@ -5,7 +5,7 @@ function Movie({id, title, medium_cover_image, summary, genres}){
 
   return <div>
   <h2>
-    <Link to={`movie/${id}`}>{title}</Link>
+    <Link to={`/movie/${id}`}>{title}</Link>
   </h2>
   <img src={medium_cover_image} alt={title}/>
   <p>{summary.length > 235 ? `${summary.slice(0,235)} ...` : summary}</p>

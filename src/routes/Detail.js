@@ -1,5 +1,5 @@
 import "./Detail.css"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 function Detail(){
   const {id} = useParams()
@@ -21,7 +21,12 @@ function Detail(){
 
   return (
     <div>
-      <h1>Detail</h1>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <h1 style={{ margin: 0, fontSize: '24px' }}>Detail</h1>
+        <Link to={'/'}>
+          <button style={{ marginLeft: '10px', padding: '8px 16px', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '16px' }}>Home</button>
+        </Link>
+      </div>
       {loading ? <p>loading ..</p> :
         <div className="detail-container" style={{ backgroundImage: `url(${detail.background_image_original})`}}>
           <img src={detail.medium_cover_image} alt="bgImg" style={{margin: "3%"}}/>
